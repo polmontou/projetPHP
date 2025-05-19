@@ -1,1 +1,1 @@
-<?php echo "Welcome in my firsdt PHP project" ?>
+<?php echo "Welcome in my first PHP project" ?>
