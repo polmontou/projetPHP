@@ -18,8 +18,8 @@ header{
 }
 
 header:hover{
-    transform: translateY(-0.5em);
-    background-color: aqua;
+    transform: translateY(-0.2em);
+    background-color: #adb42b;
     box-shadow: 0.3rem 0.3rem 0.3rem #34351c;
 
 }
@@ -47,4 +47,19 @@ header:hover{
     padding-right: 0.5rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
+    font-size: 1rem;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+ .main__itemFeed__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #34351c70;
+    border-radius: 2rem;
+ }

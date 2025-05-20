@@ -1,3 +1,4 @@
-<?php require('header.php'); ?>
-<?php require('item.php'); ?>
-<?php require('footer.php'); ?>
+<?php require('template/header.php'); ?>
+<!-- <?php require('page/catalog-with-keys.php'); ?> -->
+<?php require('page/multidimensional-catalog.php'); ?>
+<?php require('template/footer.php'); ?>
