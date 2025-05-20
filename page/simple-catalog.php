@@ -23,7 +23,11 @@ $last_index = array_key_last($products);
 sort($products);
 foreach($products as $product) {
     echo "<p>$product</p>";
-}
+};
+
+for ($x=0; $x < count($products); $x++) {
+    echo "<p>$products[$x]</p>";
+};
 
 
 
