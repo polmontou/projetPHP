@@ -3,29 +3,48 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body {
+    font-family: 'Macondo';
+    background-color: #e6d89a;
+}
 header{
     display: flex;
     height: 8rem;
     margin: 0.5rem;
     align-items: center;
     background-color: #a3a83e;
-    border-radius: 0.5rem;;
+    border-radius: 1rem;
+    transition: 0.3s;
+}
+
+header:hover{
+    transform: translateY(-0.5em);
+    background-color: aqua;
+    box-shadow: 0.3rem 0.3rem 0.3rem #34351c;
 
 }
 
 #header__menuLogo{
-    height: 1.5rem;
-    margin-left: 2rem;
+    height: 1.3rem;
+    margin-left: 1.5rem;
 }
 
 #header__pageLogo {
-    height: 6rem;
-    margin-left: 2rem;
+    height: 5rem;
+    margin-left: 1.5rem;
 }
 
 #header__title{
     font-weight: 900;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
+    padding-left: 0rem;
+}
+
+.main__footer {
+    background-color: #a3a83e;
+    text-align: right;
+    padding-right: 0.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
 }
