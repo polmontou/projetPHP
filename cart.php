@@ -1,5 +1,6 @@
-<?php 
-include('my-functions.php');
+<?php
+//Header
+require('template/header.php');
 
 $products =[   
     "bottes_harry" => [
@@ -33,19 +34,10 @@ $products =[
         "picture_url" => "https://www.dofusbook.net/static/dist/items/19083-100.webp",
     ]
 ];
-echo "<main>";
-foreach($products as $object => $properties) {
-    echo "<div class='main__itemFeed__card'>
-            <h3 class='main__itemFeed__card__itemName'>".$properties['name']."</h3>
-            <img class='main__itemFeed__card__itemImage' alt='".$properties['name']."' src='".$properties['picture_url']."'>
-            <p class='main__itemFeed__card__itemPrice'>Prix HT : ".formatPrice(price: discountedPrice(priceExcludingTva($properties['price']), $properties['discount']))."</p>
-            <form action='cart.php' method='post'>
-                <label for='quantity'>Quantité : </label>
-                <input type ='number' id='quantity_".$object."' class='main__itemFeed__card__quantityForm' name='quantity' min='0' max='10'>
-                <input type='submit' value='Commander'>
-            </form>  
-        </div>";
-};
 
-echo "</main>";
+
+
+//Footer
+require('template/footer.php')
+
 ?>

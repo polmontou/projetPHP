@@ -63,3 +63,6 @@ main {
     background-color: #34351c70;
     border-radius: 2rem;
  }
+ .main__itemFeed__card__quantityForm {
+    margin-right: 2rem;
+ }
