@@ -1,5 +1,7 @@
 <?php
 
+include('my-functions.php'); 
+
 $bottes_harry = [
     "name" => "Bottes Harry",
     "price" => 200000,
@@ -27,19 +29,19 @@ $talisman_songe = [
 echo "<div class='card'>
     <h3>".$bottes_harry['name']."</h3>
     <img alt='".$bottes_harry['name']."' src='".$bottes_harry['picture_url']."' class='card__img'>
-    <p>Prix :".$bottes_harry["price"]."kamas</p> 
+    <p>Prix :".formatPrice(discountedPrice(priceExcludingTva($bottes_harry["price"]), $bottes_harry['discount']))."</p> 
     </div>";
 
 echo "<div class='card'>
     <h3>".$capuche_roissingue['name']."</h3>
     <img alt='".$capuche_roissingue['name']."' src='".$capuche_roissingue['picture_url']."' class='card__img'>
-    <p>Prix :".$capuche_roissingue["price"]."kamas</p> 
+    <p>Prix :".formatPrice(discountedPrice(priceExcludingTva($capuche_roissingue["price"]), $capuche_roissingue['discount']))."</p> 
     </div>";
 
 echo "<div class='card'>
     <h3>".$talisman_songe['name']."</h3>
     <img alt='".$talisman_songe['name']."' src='".$talisman_songe['picture_url']."' class='card__img'>
-    <p>Prix :".$talisman_songe["price"]."kamas</p> 
+    <p>Prix :".formatPrice(discountedPrice(priceExcludingTva($talisman_songe["price"]), $talisman_songe['discount']))."</p> 
     </div>";
 
 
