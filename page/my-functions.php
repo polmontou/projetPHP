@@ -1,5 +1,6 @@
 <?php
 
+
 function formatPrice(float $price): string {
     $formatedPrice = number_format(($price/100), 2,","," ")." kamas";
     return $formatedPrice;
@@ -15,4 +16,14 @@ function discountedPrice(float $priceHt, $discount): float {
     return $discountedPrice;
 }
 
+function shippingCost(int $weigth, float $total): float {
+    if ($weigth > 2000){
+        $shippingCost = 0;
+    } elseif ($weigth > 500) {
+        $shippingCost = $total * 0.1;
+    } else {
+        $shippingCost = 50000;
+    }
+    return $shippingCost;
+}
 ?>

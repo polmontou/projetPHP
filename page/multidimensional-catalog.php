@@ -33,19 +33,24 @@ $products =[
         "picture_url" => "https://www.dofusbook.net/static/dist/items/19083-100.webp",
     ]
 ];
-echo "<main>";
-foreach($products as $object => $properties) {
-    echo "<div class='main__itemFeed__card'>
-            <h3 class='main__itemFeed__card__itemName'>".$properties['name']."</h3>
-            <img class='main__itemFeed__card__itemImage' alt='".$properties['name']."' src='".$properties['picture_url']."'>
-            <p class='main__itemFeed__card__itemPrice'>Prix HT : ".formatPrice(price: discountedPrice(priceExcludingTva($properties['price']), $properties['discount']))."</p>
-            <form action='cart.php' method='post'>
-                <label for='quantity'>Quantité : </label>
-                <input type ='number' id='quantity_".$object."' class='main__itemFeed__card__quantityForm' name='quantity' min='0' max='10'>
-                <input type='submit' value='Commander'>
-            </form>  
-        </div>";
-};
 
-echo "</main>";
 ?>
+<main>
+    <h3 class="main__title">Notre boutique</h3>
+    <form action='cart.php' method='POST'>
+        <?php foreach($products as $object => $properties) { ?>
+                <div class='main__itemFeed__card'>
+                    <h3 class='main__itemFeed__card__itemName'><?= $properties['name'] ?></h3>
+                    <img class='main__itemFeed__card__itemImage' alt='<?= $properties['name']?>' src=<?= $properties['picture_url'] ?>>
+                    <p class='main__itemFeed__card__itemPriceHT'>Prix HT : <?= formatPrice(priceExcludingTva($properties['price']))?></p>
+                    <p class='main__itemFeed__card__itemPriceTTC'>Prix TTC : <?= formatPrice($properties['price']) ?></p>
+                    <p class='main_itemFeed__card__discountValue'>Remise : <?= $properties['discount']?> %</p>
+                    <div class='quantity__form'>
+                        <label for='<?= $object ?>'>Quantité : </label>
+                        <input type ='number' id='<?= $object ?>' class='main__itemFeed__card__quantityForm' name='<?= $object ?>' min='0' max='10' value ='0'>
+                    </div>
+                </div>
+        <?php }; ?>
+        <div id='submitForm__button'><input type='submit' value='Commander'></div>
+    </form>
+</main>
