@@ -46,13 +46,16 @@ header:hover{
 }
 .main__footer {
     background-color: #a3a83e;
-    text-align: right;
     padding-right: 0.5rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
     font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
 }
-
+.main__footer>a{
+    margin-left: 0.5rem;
+}
 main {
     display: flex;
     flex-direction: column;

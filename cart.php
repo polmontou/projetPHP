@@ -1,5 +1,6 @@
 <!-- Header -->
 <?php 
+session_start();
 require('template/header.php'); 
 include('page/my-functions.php');
 
@@ -48,9 +49,10 @@ $products =[
         <table>
 
         <?php 
+        $_SESSION['cart']= $_POST;
         $totalCart = 0;
         $totalWeight = 0;
-        foreach($_POST as $key=>$value) {
+        foreach($_SESSION['cart'] as $key=>$value) {
             if($value > "0") { 
                 $priceWithoutTva = priceExcludingTva($products[$key]['price']);
                 $discountedPrice = discountedPrice(priceExcludingTva($products[$key]['price']), $products[$key]['discount']);
@@ -73,10 +75,10 @@ $products =[
                     <td class="modifiedBy" colspan="2">Soit pour <?= $value?> : </td>
                     <td class="modifiedBy main__recapCommand__itemInfo__td--nowrap" ><?= formatPrice($totalDiscountedPrice)?></td>
                 </tr>
-                <tr class="main__recapCommand__itemLine main__recapCommand__itemInfo--rightside">
+                <!-- <tr class="main__recapCommand__itemLine main__recapCommand__itemInfo--rightside">
                     <td class="modifiedBy" colspan="2">Avec en TVA : </td>
                     <td class="modifiedBy main__recapCommand__itemInfo__td--nowrap" ><?= formatPrice($totalDiscountedPrice*0.2)?></td>
-                </tr>
+                </tr> -->
             <?php } 
         }
         $shippingCost = shippingCost($totalWeight, $totalCart*1.2) ?>
@@ -91,7 +93,7 @@ $products =[
                 <tr class="main__recapCommand__itemLine main__recapCommand__itemInfo--rightside">
                     <td class="modifiedBy" colspan="2">Frais de livraison pour <?= $totalWeight ?> pods :</td>
                     <td class="modifiedBy main__recapCommand__itemInfo__td--nowrap" >
-                        <?= ($shippingCost == 0) ? "OFFERTS!" : $shippingCost?>
+                        <?= ($shippingCost == 0) ? "OFFERTS!" : formatPrice($shippingCost)?>
                     </td>
                 </tr>
                 <tr class="main__recapCommand__itemLine main__recapCommand__itemInfo--rightside">
