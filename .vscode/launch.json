@@ -7,7 +7,7 @@
 			"request": "launch",
 			"port": 9003,
 			"pathMappings": {
-				"/var/www/phpdebase": "${workspaceFolder}"
+				"/var/www/projetPHP": "${workspaceFolder}"
 			}
 		}
 	]

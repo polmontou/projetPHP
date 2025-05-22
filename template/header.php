@@ -1,3 +1,10 @@
+<?php 
+    include('session-n-link.php');
+    if (!isset($_SESSION['session_started']) && !$_SESSION['session_started']) {
+        initCart($products);
+    $_SESSION['session_started'] = true;
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

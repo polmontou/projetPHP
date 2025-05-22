@@ -1,6 +1,5 @@
 <?php
 
-
 function formatPrice(float $price): string {
     $formatedPrice = number_format(($price/100), 2,","," ")." kamas";
     return $formatedPrice;
@@ -30,3 +29,11 @@ function shippingCost(int $weigth, float $total): float {
         return $shippingCost;
     }
 }
+
+
+function initCart($products): void {
+    foreach ($products as $item => $properties) {
+        $_SESSION[$item] = 0;
+    }
+}
+

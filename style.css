@@ -74,10 +74,9 @@ main {
     margin-right: 2rem;
 }
 
-#submitForm__button {
+#submitForm__buttons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+justify-content: space-around;
     margin-bottom: 1rem;
 }
 
@@ -95,4 +94,9 @@ main {
 
 .main__recapCommand__itemInfo__td--nowrap {
     white-space: nowrap;
+}
+
+#cart__main__resetCartButton {
+    display: flex;
+    justify-content: space-around;
 }
